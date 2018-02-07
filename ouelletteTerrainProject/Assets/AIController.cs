@@ -8,50 +8,152 @@ using UnityEngine.UI;
 
 public class AIController : Movement {
 
-    public Vector3 otherPosition;
     public Transform Player, Target;
-    public float threshold = -1.5f;
-    public GameObject spotted, heard;
-    public bool isSpotted = false, isHeard = false;
+    public GameObject spotted, heard, talk;
 
-    void FixedUpdate()
-    {
-        if (Player)
-        {
-            Vector3 forward = transform.forward;
-            otherPosition = transform.position - Player.position;
-            Vector3 targetDir = Player.position - transform.position;
+    enum State {PASSIVE,AGRESSIVE}
+    [SerializeField]
+    State m_State = State.PASSIVE;
 
-            float angle = Vector3.Angle(targetDir, forward);
-            var dist = Vector3.Distance(Player.position, transform.position);
+    enum PassiveState {LOOK,WANDER,INTERACT }
+    [SerializeField]
+    PassiveState m_PassiveState = PassiveState.WANDER;
 
-            Vector3 angleCheck = transform.InverseTransformPoint(Player.position);
+    enum AgressiveState {IDLE,LOOK,ATTACK}
+    [SerializeField]
+    AgressiveState m_AgressiveState = AgressiveState.IDLE;
 
-            if (angleCheck.x < 0){
-                angle = -angle;
-            }
+    void Start(){
+        spotted.SetActive(false);
+        heard.SetActive(false);
+        talk.SetActive(false);
+    }
 
-            if (angle < 45.0f && dist < 20.0f){
-                spotted.SetActive(true);
-                isSpotted = true;
-                Move(angle, 80f);
-            }
-            else{
-                spotted.SetActive(false);
-                isSpotted = false;
-            }
-            if (!isSpotted && angle < 360 && dist < 50.0f){
-                heard.SetActive(true);
-                isHeard = true;
-                Move(angle, 0);
-            }
-            else{
-                heard.SetActive(false);
-                isHeard = false;
-            }
-            if (isSpotted) {
-                
-            }
+    void FixedUpdate(){
+        CheckState();
+        CheckDistance();
+    }
+
+    void CheckState() {
+        switch (m_State) {
+            case State.PASSIVE:
+                CheckPassiveState();
+                break;
+            case State.AGRESSIVE:
+                CheckAgressiveState();
+                break;
         }
     }
+
+    void OnDrawGizmos(){
+        Gizmos.color = Color.red;
+        // Gizmos.DrawWireSphere(transform.position, 20);
+        Vector3 direction = transform.TransformDirection(Vector3.forward) * 30;
+        Gizmos.DrawRay(transform.position, direction);
+    }
+
+    void CheckDistance() {
+       // RaycastHit hit;
+        var dist = Vector3.Distance(Player.position, transform.position);
+
+        if (dist > 30.0f && dist <= 50.0f) {
+            m_AgressiveState = AgressiveState.LOOK;
+            m_PassiveState = PassiveState.LOOK;
+        } 
+       // else if (dist <= 30.0f) {
+            if (Physics.Raycast(transform.position, Vector3.forward, 30)) {
+                m_AgressiveState = AgressiveState.ATTACK;
+                m_PassiveState = PassiveState.INTERACT;
+            }
+       // } 
+        //else if (dist <= 30.0f) {
+        //    if (Physics.SphereCast(transform.position, 20, Vector3.up, out hit, 20)) {
+
+        //        m_AgressiveState = AgressiveState.ATTACK;
+        //        m_PassiveState = PassiveState.INTERACT;
+        //    }
+        //} 
+        else {
+            m_AgressiveState = AgressiveState.IDLE;
+            m_PassiveState = PassiveState.WANDER;
+        }
+    }
+
+    void CheckPassiveState(){
+        switch (m_PassiveState) {
+            case PassiveState.INTERACT:
+                PassiveInteract();
+                break;
+            case PassiveState.LOOK:
+                Look();
+                break;
+            case PassiveState.WANDER:
+                PassiveWander();
+                break;
+        }
+    }
+    void CheckAgressiveState() {
+        switch (m_AgressiveState) {
+            case AgressiveState.IDLE:
+                Idle();
+                break;
+            case AgressiveState.LOOK:
+                Look();
+                break;
+            case AgressiveState.ATTACK:
+                AgressiveAttack();
+                break;
+        }
+    }
+
+    void PassiveInteract() {
+        heard.SetActive(false);
+        talk.SetActive(true);
+    }
+
+    void PassiveWander() {
+        heard.SetActive(false);
+        spotted.SetActive(false);
+        talk.SetActive(false);
+    }
+
+    void Idle() {
+        heard.SetActive(false);
+        spotted.SetActive(false);
+        talk.SetActive(false);
+    }
+
+    void Look() {
+        Vector3 targetDir = Player.position - transform.position;
+        float angle = Vector3.Angle(targetDir, transform.forward);
+        Vector3 angleCheck = transform.InverseTransformPoint(Player.position);
+
+        if (angleCheck.x < 0){
+            angle = -angle;
+        }
+
+        heard.SetActive(true);
+        spotted.SetActive(false);
+        talk.SetActive(false);
+        Move(angle, 0);
+    }
+
+    void AgressiveAttack() {
+        Vector3 targetDir = Player.position - transform.position;
+        float angle = Vector3.Angle(targetDir, transform.forward);
+        Vector3 angleCheck = transform.InverseTransformPoint(Player.position);
+
+        if (angleCheck.x < 0) {
+            angle = -angle;
+        }
+
+        if (angle < 45.0f){
+            float forwardSpeed = 1.0f;
+            spotted.SetActive(true);
+            heard.SetActive(false);
+            talk.SetActive(false);
+            Move(angle, forwardSpeed);
+        }
+    }
+
 }

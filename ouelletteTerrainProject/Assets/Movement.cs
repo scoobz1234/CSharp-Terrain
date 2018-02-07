@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))] 
 public class Movement : MonoBehaviour {
-    public float Speed = 100.0f;
+    public float Speed = 200.0f;
     public float angularSpeed = 50f;
     public Rigidbody rb;
 
