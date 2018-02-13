@@ -32,31 +32,31 @@ char* EnemySpeech(int choice) {
 		return "The goblin sneers and returns with a hit of his own";
 		break;
 	case 2:
-		return "The goblin sneers and returns with a hit of his own";
+		return "The goblin laughs and returns with a hit";
 		break;
 	case 3:
-		return "The goblin sneers and returns with a hit of his own";
+		return "The goblin hits you";
 		break;
 	case 4:
-		return "The goblin sneers and returns with a hit of his own";
+		return "The goblin sarls and returns with a headshot";
 		break;
 	case 5:
-		return "The goblin sneers and returns with a hit of his own";
+		return "Laughing, the Goblin hits you back";
 		break;
 	case 6:
-		return "The goblin sneers and returns with a hit of his own";
+		return "hoping he doesnt miss, the Goblin hits as hard as he can";
 		break;
 	case 7:
-		return "The goblin sneers and returns with a hit of his own";
+		return "Trying not to miss, the Goblin hits";
 		break;
 	case 8:
-		return "The goblin sneers and returns with a hit of his own";
+		return "with no words, the Goblin strikes";
 		break;
 	case 9:
-		return "The goblin sneers and returns with a hit of his own";
+		return "preparing for a return strike, the Goblin hits";
 		break;
 	case 10:
-		return "The goblin sneers and returns with a hit of his own";
+		return "The goblin shouts 'I laugh in the face of danger' and strikes";
 		break;
 	}
 }
@@ -67,31 +67,31 @@ char* PlayerSpeech(int choice) {
 		return "You laugh at the Goblin and return with a hit of your own!";
 		break;
 	case 2:
-		return "You laugh at the Goblin and return with a hit of your own!";		
+		return "you strike back";		
 		break;
 	case 3:
-		return "You laugh at the Goblin and return with a hit of your own!";		
+		return "gritting your teeth you aim for the Goblins head";		
 		break;
 	case 4:
-		return "You laugh at the Goblin and return with a hit of your own!";		
+		return "after stubbing your toe, you wince and attempt to strike";		
 		break;
 	case 5:
-		return "You laugh at the Goblin and return with a hit of your own!";		
+		return "you laugh, he laughs, the floor laughs, wait... what?";		
 		break;
 	case 6:
-		return "You laugh at the Goblin and return with a hit of your own!";		
+		return "going for a low blow, you aim for the goblins miniature testies";		
 		break;
 	case 7:
-		return "You laugh at the Goblin and return with a hit of your own!";		
+		return "You laugh and hit";		
 		break;
 	case 8:
-		return "You laugh at the Goblin and return with a hit of your own!";		
+		return "fearing your death, you strike as hard as you can";		
 		break;
 	case 9:
-		return "You laugh at the Goblin and return with a hit of your own!";		
+		return "you laugh in the face of death, and hit";		
 		break;
 	case 10:
-		return "You laugh at the Goblin and return with a hit of your own!";		
+		return "you return with a hit of your own";		
 		break;
 	}
 }
@@ -142,7 +142,7 @@ void Battle(int situation) {
 			Battle(4);
 		}
 		else {
-			enemy.GiveDamage(&player, (mDamage -5));
+			enemy.GiveDamage(&player, (mDamage));
 			std::cout << "The Goblin hit you for " << mDamage << " hit-points!\n";
 			std::cout << "Your Health is now " << *player.currentHealth << std::endl;
 			system("pause");
