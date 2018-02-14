@@ -53,26 +53,21 @@ public class AIController : Movement {
     }
 
     void CheckDistance() {
-       // RaycastHit hit;
+        RaycastHit hit;
         var dist = Vector3.Distance(Player.position, transform.position);
 
         if (dist > 30.0f && dist <= 50.0f) {
             m_AgressiveState = AgressiveState.LOOK;
             m_PassiveState = PassiveState.LOOK;
-        } 
-       // else if (dist <= 30.0f) {
-            if (Physics.Raycast(transform.position, Vector3.forward, 30)) {
+        }
+
+        if (Physics.Raycast(transform.position, Vector3.forward, out hit)) {
+            if (hit.transform.GetComponentInParent<PlayerController>())
+            {
                 m_AgressiveState = AgressiveState.ATTACK;
                 m_PassiveState = PassiveState.INTERACT;
             }
-       // } 
-        //else if (dist <= 30.0f) {
-        //    if (Physics.SphereCast(transform.position, 20, Vector3.up, out hit, 20)) {
-
-        //        m_AgressiveState = AgressiveState.ATTACK;
-        //        m_PassiveState = PassiveState.INTERACT;
-        //    }
-        //} 
+        }
         else {
             m_AgressiveState = AgressiveState.IDLE;
             m_PassiveState = PassiveState.WANDER;
