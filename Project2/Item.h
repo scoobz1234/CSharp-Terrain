@@ -1,9 +1,10 @@
 #pragma once
 class Item{
 public:
-	Item();
-	char* name;
-	int numItem;
+	Item() {}
+	Item(char*, int);
+	char* mName;
+	int mNumItem;
 	
 };
 

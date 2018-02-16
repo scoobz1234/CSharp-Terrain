@@ -1,25 +1,21 @@
 #include "Actor.h"
 #include <algorithm>
 
-Actor::Actor() {
-	maxHealth = 100;
-	health = 100;
-	name = "";
-}
+Actor::Actor(char* name,int maxHealth,int health): mMaxHealth(maxHealth),
+mHealth(mHealth),mName(name) {}
 
 void Actor::TakeDamage(int damage) {
-	health -= damage;
+	mHealth -= damage;
 }
 
 void Actor::GiveDamage(Actor* actor,int damage) {
-	actor->health -= damage;
+	actor->mHealth -= damage;
 }
 
 void Actor::SetName(const std::string& name) {
-	Actor::name = name;
+	Actor::mName = name;
 }
 
-void Actor::GiveItem(Actor* actor, Item item) {
+void Actor::GiveItem(Actor* actor, Item* item) {
 	actor->inventory.ReceiveItem(item);
-
 }

@@ -4,12 +4,12 @@
 
 class Inventory : public Item {
 public:
+	Inventory() : Item() {}
 	void PrintInventory();
 protected:
-	std::vector<Item> items;
+	std::vector<Item*> items;
 public:
-	Item TakeItem(int);
-	void ReceiveItem(Item);
-	void Inventory::RemoveItem(int);
+	Item* TakeItem(int);
+	void ReceiveItem(Item*);
 };
 

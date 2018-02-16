@@ -6,18 +6,19 @@
 
 class Actor :  public Inventory{
 private:
-	int maxHealth;
-	int health;
+	int mMaxHealth;
+	int mHealth;
 public:
 	Actor();
+	Actor(char*,int,int);
 	void TakeDamage(int);
 	void GiveDamage(Actor*,int);
 	void SetName(const std::string&);
-	std::string name;
-	int *currentHealth = &health;
+	std::string mName;
+	int *currentHealth = &mHealth;
 
 public:
 	Inventory inventory;
-	void GiveItem(Actor*, Item);
+	void GiveItem(Actor*, Item*);
 };
 

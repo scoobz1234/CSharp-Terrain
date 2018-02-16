@@ -1,7 +1,9 @@
 ﻿  main.cpp
-c:\users\stephen\desktop\vgp401a\project2\main.cpp(400): warning C4065: switch statement contains 'default' but no 'case' labels
-c:\users\stephen\desktop\vgp401a\project2\main.cpp(520): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\stephen\desktop\vgp401a\project2\main.cpp(82): warning C4715: 'Communication': not all control paths return a value
-c:\users\stephen\desktop\vgp401a\project2\main.cpp(67): warning C4715: 'PlayerSpeech': not all control paths return a value
-c:\users\stephen\desktop\vgp401a\project2\main.cpp(52): warning C4715: 'EnemySpeech': not all control paths return a value
-  Project2.vcxproj -> C:\Users\Stephen\Desktop\vgp401a\x64\Debug\Project2.exe
+c:\users\student\desktop\vgp401a\project2\main.cpp(328): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Narration.cpp
+c:\users\student\desktop\vgp401a\project2\narration.cpp(145): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+c:\users\student\desktop\vgp401a\project2\narration.cpp(151): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+  Generating Code...
+c:\users\student\desktop\vgp401a\project2\narration.cpp(156): warning C4715: 'Narration::getTaunt': not all control paths return a value
+c:\users\student\desktop\vgp401a\project2\main.cpp(55): warning C4715: 'Communication': not all control paths return a value
+  Project2.vcxproj -> C:\Users\student\Desktop\vgp401a\x64\Debug\Project2.exe
