@@ -1,2 +1,7 @@
-﻿  Inventory.cpp
+﻿  main.cpp
+c:\users\stephen\desktop\vgp401a\project2\main.cpp(400): warning C4065: switch statement contains 'default' but no 'case' labels
+c:\users\stephen\desktop\vgp401a\project2\main.cpp(520): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\stephen\desktop\vgp401a\project2\main.cpp(82): warning C4715: 'Communication': not all control paths return a value
+c:\users\stephen\desktop\vgp401a\project2\main.cpp(67): warning C4715: 'PlayerSpeech': not all control paths return a value
+c:\users\stephen\desktop\vgp401a\project2\main.cpp(52): warning C4715: 'EnemySpeech': not all control paths return a value
   Project2.vcxproj -> C:\Users\Stephen\Desktop\vgp401a\x64\Debug\Project2.exe
