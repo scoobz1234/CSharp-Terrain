@@ -5,9 +5,10 @@
 
 
 class Actor :  public Inventory{
+	friend class GameManager;
 private:
-	int mMaxHealth;
-	int mHealth;
+	int mMaxHealth{ 100 };
+	int mHealth{ 100 };
 public:
 	Actor();
 	Actor(char*,int,int);

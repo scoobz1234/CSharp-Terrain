@@ -1,0 +1,50 @@
+LOOKJUNGLE:: having a look around the jungle, you see some rather large trees, blue skies, 
+and the ground feels soft from years of leaves and compost. To the NORTH you see a 'Tomb' that catches your interest;
+LOOKTOMB:: looking up at the large door, you can see a lever to the side that
+would most likely grant you access behind you is the jungle where you came from..;
+LOOKDEPTHS:: You look into the 'depths' of the cave, and decide there is only one path to take,
+so you get ready to travers farther into the cave;
+OPENTOMB:: You pull the lever down, and the cave entrance opens, 
+revealing a cobblestone path that extends as far as the eye can see...
+albeit the eye can't see that far into the darkness...
+shall we go inside?;
+GOTOCAVE:: As you walk inside the tomb, 
+the door slams shut behind you. panic rushes over you,
+as you turn around and try to open the door. 
+alas you cannot....
+You turn around and as your eyes adjust to the dimly lit cave,
+you think to yourself.. only one way to go now.. Forward!;
+GOTOJUNGLE:: You walk back to the Jungle clearing
+ now what? round and round the circle we go?;
+GOTODEPTHS:: As you begin your decent into the dark and damp cave,
+you hear the quiet pitter patter of feet on the cobblestone floor in front of you..
+a shiver runs down your spine... 
+a Goblin runs up to you out of the darkness and petitions you for battle 
+Shall we 'Battle'?;
+GOTOTOMB:: You walk over to the Tomb, 
+realizing it is MUCH larger than you originally thought.
+What am I to do now? you begin to 'Look' around..;
+WIN::
+
+
+	
+**********************************************************
+**********************************************************
+                 THANKS FOR PLAYING!!
+**********************************************************
+**********************************************************;
+LOSE:: Your blood begins to fill the cracks of the cobblestone floor
+as the life exits your eyes.
+The goblin has his way with your lifeless body...;
+PTRADE:: Select the index of the item you would like to trade?;
+ATRADE:: Select the index of the item you would like from your ally;
+HELP::
+	
+*************************************
+               COMMANDS              
+*************************************
+Hello, Inventory, Battle, Look, Open 
+Pickup, Drop, Trade, Goto, Quit, Help
+*************************************
+               COMMANDS              
+*************************************;

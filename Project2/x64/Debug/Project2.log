@@ -1,9 +1,16 @@
 ﻿  main.cpp
-c:\users\student\desktop\vgp401a\project2\main.cpp(328): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Narration.cpp
-c:\users\student\desktop\vgp401a\project2\narration.cpp(145): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-c:\users\student\desktop\vgp401a\project2\narration.cpp(151): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-  Generating Code...
-c:\users\student\desktop\vgp401a\project2\narration.cpp(156): warning C4715: 'Narration::getTaunt': not all control paths return a value
-c:\users\student\desktop\vgp401a\project2\main.cpp(55): warning C4715: 'Communication': not all control paths return a value
-  Project2.vcxproj -> C:\Users\student\Desktop\vgp401a\x64\Debug\Project2.exe
+  glad.c
+main.obj : error LNK2019: unresolved external symbol glfwInit referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwTerminate referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwWindowHint referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwCreateWindow referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwWindowShouldClose referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwSetWindowShouldClose referenced in function "void __cdecl processInput(struct GLFWwindow *)" (?processInput@@YAXPEAUGLFWwindow@@@Z)
+main.obj : error LNK2019: unresolved external symbol glfwSetFramebufferSizeCallback referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwPollEvents referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwGetKey referenced in function "void __cdecl processInput(struct GLFWwindow *)" (?processInput@@YAXPEAUGLFWwindow@@@Z)
+main.obj : error LNK2019: unresolved external symbol glfwMakeContextCurrent referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwSwapBuffers referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwGetProcAddress referenced in function main
+C:\Users\Stephen\Desktop\vgp401a\Project2\OpenGL\Libraries\glfw3.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Stephen\Desktop\vgp401a\x64\Debug\Project2.exe : fatal error LNK1120: 12 unresolved externals

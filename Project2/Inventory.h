@@ -1,11 +1,12 @@
 #pragma once
 #include "Item.h"
 #include <vector>
+#include <string>
 
 class Inventory : public Item {
 public:
 	Inventory() : Item() {}
-	void PrintInventory();
+	void PrintInventory(std::string);
 protected:
 	std::vector<Item*> items;
 public:

@@ -4,8 +4,7 @@
 class Speech
 {
 public:
-	Speech();
-	char* name;
+	Speech() {}
 	std::string message;
 };
 

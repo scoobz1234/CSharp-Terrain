@@ -2,7 +2,7 @@
 #include <algorithm>
 
 Actor::Actor(char* name,int maxHealth,int health): mMaxHealth(maxHealth),
-mHealth(mHealth),mName(name) {}
+mHealth(health),mName(name) {}
 
 void Actor::TakeDamage(int damage) {
 	mHealth -= damage;

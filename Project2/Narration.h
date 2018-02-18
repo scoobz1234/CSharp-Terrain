@@ -1,33 +1,14 @@
 #pragma once
-#include <string>
 #include <vector>
 #include "Speech.h"
 
-
 class Narration : public Speech{
 
-//look narration
 public:
 	Narration();
-	Speech lookJungle;
-	Speech lookTombEntrance;
-	Speech lookDepths;
-
-//goto narration
-public:
-	Speech goToJungle;
-	Speech goToTomb;
-	Speech goToCave;
-	Speech goToDepths;
-
-//open narration
-public:
-	Speech openTomb;
-
 //functions
 public:
 	Speech getTaunt(char, unsigned int);
-
 //taunts
 public:
 	std::vector<Speech>playerTaunts;
@@ -53,13 +34,5 @@ public:
 	Speech enemyTaunt8;
 	Speech enemyTaunt9;
 	Speech enemyTaunt10;
-
-//scenario
-public:
-	Speech help;
-	Speech win;
-	Speech lose;
-	Speech playerTrade;
-	Speech allyTrade;
 };
 
