@@ -1,5 +1,4 @@
-﻿  main.cpp
-  glad.c
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Project2.vcxproj).  This can lead to incorrect clean and rebuild behavior.
 main.obj : error LNK2019: unresolved external symbol glfwInit referenced in function main
 main.obj : error LNK2019: unresolved external symbol glfwTerminate referenced in function main
 main.obj : error LNK2019: unresolved external symbol glfwWindowHint referenced in function main
@@ -12,5 +11,5 @@ main.obj : error LNK2019: unresolved external symbol glfwGetKey referenced in fu
 main.obj : error LNK2019: unresolved external symbol glfwMakeContextCurrent referenced in function main
 main.obj : error LNK2019: unresolved external symbol glfwSwapBuffers referenced in function main
 main.obj : error LNK2019: unresolved external symbol glfwGetProcAddress referenced in function main
-C:\Users\Stephen\Desktop\vgp401a\Project2\OpenGL\Libraries\glfw3.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\Stephen\Desktop\vgp401a\x64\Debug\Project2.exe : fatal error LNK1120: 12 unresolved externals
+C:\Users\Stephen\Desktop\vgp401a\OpenGL\Lib\glfw3.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Stephen\Desktop\vgp401a\x64\Debug\TheTomb.exe : fatal error LNK1120: 12 unresolved externals
